@@ -8,4 +8,6 @@ function __autoload( $className ) {
 $pen = new Pen("blue", "0.7", "blue-black", "Useful series of pens with cap", "BRAUBERG");
 
 $pen->write($pen->getDescription());
-
+$pen->press();//on
+$pen->write($pen->getDescription());
+$pen->press();//off

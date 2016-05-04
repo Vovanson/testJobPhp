@@ -5,6 +5,7 @@ class Pen extends WritingAccessories
 {
     private $widthLine;
     private $inkColor;
+    private $activate = false;
 
     public function __construct($inkColor, $widthLine, $bodyColor = "", $description = "", $manufacturer = "")
     {
@@ -23,8 +24,27 @@ class Pen extends WritingAccessories
         return $this->inkColor;
     }
 
+    public function getActivate()
+    {
+        return $this->activate;
+    }
+
     public function write($text)
     {
-        print("Write(line:$this->widthLine mm, color: $this->inkColor):$text ");
+        if($this->activate) {
+            print("Write(line:$this->widthLine mm, color: $this->inkColor):$text <br>");
+        }else{
+            print("Automatic pen off <br>");
+        }
+    }
+
+    public function press()
+    {
+        if($this->activate){
+            $this->activate = false;
+            print( "Off<br>");
+        } else{
+            $this->activate = true;
+            print( "On<br>");}
     }
 }
