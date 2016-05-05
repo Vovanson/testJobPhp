@@ -8,7 +8,7 @@ function __autoload( $className ) {
 $pen = new Pen("0.7",['red','green','blue','black'], "blue-black", "Color pen", "BRAUBERG");
 
     $pen->write($pen->getDescription());
-    $pen->press('0',true);//color choice with the inclusion
+    $pen->press('0',true);//color choice with the activate
     $pen->write($pen->getDescription());
     $pen->press('2');//off
     $pen->write($pen->getDescription());
